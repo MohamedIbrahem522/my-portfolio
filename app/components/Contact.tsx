@@ -96,7 +96,7 @@ const Contact = ({ lang }: { lang: "ar" | "en" }) => {
 
             <div className="flex gap-4 pt-6 justify-center md:justify-start">
               {[
-                { icon: <Linkedin size={20} />, link: "https://linkedin.com" },
+                { icon: <Linkedin size={20} />, link: "https://www.linkedin.com/in/mohamed-ibrahem-63446322a" },
                 { icon: <Github size={20} />, link: "https://github.com/MohamedIbrahem522" },
                 { icon: <MessageSquare size={20} />, link: "https://wa.me/201228989799" }
               ].map((social, i) => (

@@ -111,7 +111,7 @@ export default function Home() {
                 </h4>
                 <div className="flex flex-row items-center gap-2.5">
                   {[
-                    { name: 'LinkedIn', url: '#' }, 
+                    { name: 'LinkedIn', url: 'https://www.linkedin.com/in/mohamed-ibrahem-63446322a' }, 
                     { name: 'GitHub', url: 'https://github.com/MohamedIbrahem522' }
                   ].map((link) => (
                     <a 
