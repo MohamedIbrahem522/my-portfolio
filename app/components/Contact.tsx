@@ -21,12 +21,17 @@ const Contact = ({ lang }: { lang: "ar" | "en" }) => {
     e.preventDefault();
     const myNumber = "201228989799"; 
     
+    // التنسيق القديم مع عنوان احترافي في البداية
     const text = 
+      `*Mohamed Portfolio | New Message*%0A` +
       `الاسم: ${formData.name}%0A` +
       `الهاتف: ${formData.phone}%0A` +
       `الرسالة: ${formData.msg}`;
 
     window.open(`https://wa.me/${myNumber}?text=${text}`, "_blank");
+    
+    // تفريغ الحقول بعد الإرسال
+    setFormData({ name: "", phone: "", msg: "" });
   };
 
   const t = {
@@ -55,11 +60,7 @@ const Contact = ({ lang }: { lang: "ar" | "en" }) => {
   }[lang];
 
   return (
-    /* تم استبدال bg-[#050505] بـ bg-transparent */
     <section ref={sectionRef} id="Contact" className={`relative w-full bg-transparent py-16 px-4 overflow-hidden ${isAr ? 'font-cairo' : ''}`} dir={isAr ? 'rtl' : 'ltr'}>
-      
-      {/* تم حذف توهج الخلفية (div الـ Glow) من هنا */}
-
       <div className="max-w-5xl mx-auto relative z-10">
         
         {/* العنوان */}
@@ -75,7 +76,6 @@ const Contact = ({ lang }: { lang: "ar" | "en" }) => {
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12 items-center">
           
-          {/* كروت التواصل */}
           <div className="space-y-4">
             {t.info.map((item, idx) => (
               <a 
@@ -115,7 +115,6 @@ const Contact = ({ lang }: { lang: "ar" | "en" }) => {
             </div>
           </div>
 
-          {/* الفورم */}
           <div className={`relative p-[1px] rounded-3xl overflow-hidden group transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
             <div className="absolute inset-[-1000%] animate-[spin_5s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#06b6d4_0%,#050505_25%,#06b6d4_50%,#050505_75%,#06b6d4_100%)] opacity-20 group-hover:opacity-100 transition-opacity"></div>
             
@@ -125,6 +124,7 @@ const Contact = ({ lang }: { lang: "ar" | "en" }) => {
                   <label className="text-[10px] text-gray-500 font-bold uppercase tracking-widest px-1">{t.form.name}</label>
                   <input 
                     type="text" required 
+                    value={formData.name}
                     className="w-full bg-white/[0.03] border border-white/10 rounded-xl px-4 py-3 text-xs text-white focus:border-[#06b6d4] focus:outline-none focus:bg-[#06b6d4]/5 transition-all"
                     onChange={(e) => setFormData({...formData, name: e.target.value})}
                   />
@@ -134,6 +134,7 @@ const Contact = ({ lang }: { lang: "ar" | "en" }) => {
                   <label className="text-[10px] text-gray-500 font-bold uppercase tracking-widest px-1">{t.form.phone}</label>
                   <input 
                     type="tel" required 
+                    value={formData.phone}
                     style={{ direction: 'ltr' }}
                     className={`w-full bg-white/[0.03] border border-white/10 rounded-xl px-4 py-3 text-xs text-white focus:border-[#06b6d4] focus:outline-none focus:bg-[#06b6d4]/5 transition-all ${isAr ? 'text-right focus:text-left' : ''}`}
                     onChange={(e) => setFormData({...formData, phone: e.target.value})}
@@ -144,6 +145,7 @@ const Contact = ({ lang }: { lang: "ar" | "en" }) => {
                   <label className="text-[10px] text-gray-500 font-bold uppercase tracking-widest px-1">{t.form.msg}</label>
                   <textarea 
                     rows={3} required 
+                    value={formData.msg}
                     className="w-full bg-white/[0.03] border border-white/10 rounded-xl px-4 py-3 text-xs text-white focus:border-[#06b6d4] focus:outline-none focus:bg-[#06b6d4]/5 transition-all resize-none"
                     onChange={(e) => setFormData({...formData, msg: e.target.value})}
                   ></textarea>

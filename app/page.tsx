@@ -12,7 +12,6 @@ import Contact from "./components/Contact";
 export default function Home() {
   const [lang, setLang] = useState<"ar" | "en">("ar");
 
-  // محتوى النصوص للغتين
   const content = {
     en: {
       nav: [
@@ -48,7 +47,6 @@ export default function Home() {
 
   const t = content[lang];
   
-  // بيانات المستخدم الأساسية
   const userData = {
     name: { en: "Mohamed Ibrahem", ar: "محمد إبراهيم" },
     image: "/imges/WhatsApp Image 2024-07-06 at 17.52.15_f09d851e-Photoroom.png",
@@ -58,10 +56,8 @@ export default function Home() {
 
   return (
     <main className="bg-transparent min-h-screen"> 
-      {/* الهيدر والـ Navbar */}
       <Navbar lang={lang} setLang={setLang} t={t} />
       
-      {/* سكاشن الصفحة */}
       <section id="Home">
         <Hero lang={lang} t={t} userData={userData} />
       </section>
@@ -86,7 +82,6 @@ export default function Home() {
         <Contact lang={lang} />
       </section>
 
-      {/* الفوتر */}
       <footer className="relative bg-transparent pt-10 pb-6 overflow-hidden border-t border-white/5">
         <div className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-[#06b6d4]/30 to-transparent"></div>
 
@@ -94,7 +89,6 @@ export default function Home() {
           <div className="flex flex-col gap-8">
             <div className="grid grid-cols-1 md:grid-cols-4 gap-8 items-start">
               
-              {/* البراند في الفوتر */}
               <div className="md:col-span-2 space-y-3">
                 <h2 className="text-2xl font-black text-white tracking-tighter uppercase italic">
                   {lang === 'ar' ? (<>محمد <span className="text-[#06b6d4]">إبراهيم</span></>) : (<>Mohamed <span className="text-[#06b6d4]">Ibrahem</span></>)}
@@ -104,7 +98,6 @@ export default function Home() {
                 </p>
               </div>
 
-              {/* روابط التواصل الاجتماعي */}
               <div className="space-y-4">
                 <h4 className="text-[#06b6d4] font-black text-[10px] uppercase tracking-[0.3em] opacity-80">
                   {lang === 'ar' ? 'تابعني' : 'Follow Me'}
@@ -126,7 +119,6 @@ export default function Home() {
                 </div>
               </div>
 
-              {/* معلومات الاتصال */}
               <div className="space-y-4">
                 <h4 className="text-[#06b6d4] font-black text-[11px] uppercase tracking-[0.2em]">
                   {lang === 'ar' ? 'تواصل' : 'Contact'}
@@ -138,11 +130,12 @@ export default function Home() {
               </div>
             </div>
 
-            {/* الحقوق وزر الصعود */}
             <div className="pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-4">
               <div className="flex items-center gap-1.5 text-[10px]">
-                <span className="text-gray-500 font-bold uppercase tracking-widest">© 2026</span>
-                <p className="font-black text-white uppercase">{lang === 'ar' ? 'محمد إبراهيم' : 'Mohamed Ibrahem'}</p>
+                {/* تم تعديل الاستايل هنا ليكون الاسم بنفس ستايل السنة */}
+                <span className="text-gray-500 font-bold uppercase tracking-widest">
+                  © 2026 {lang === 'ar' ? 'محمد إبراهيم | جميع الحقوق محفوظة' : 'Mohamed Ibrahem | All rights reserved'}
+                </span>
               </div>
               <button 
                 onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })} 
