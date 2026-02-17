@@ -1,20 +1,23 @@
 @import "tailwindcss";
 
 @theme {
-  --font-cairo: "Cairo", sans-serif;
-  
-  /* الدرجة الجديدة: أفتح من الأسود الصريح بحاجة بسيطة جداً */
+  /* تعريف الألوان - دي اللي بتخلي hover:text-primary يشتغل */
+  --color-primary: #00eeff; 
+  --color-main-bg: #00080f;
 
-  --keyframes-scroll-dot: {
+  /* تعريف الفونت */
+  --font-cairo: "Cairo", sans-serif;
+
+  /* الأنميشنز */
+  @keyframes scroll-dot {
     0% { transform: translateY(0); opacity: 1; }
-    50% { opacity: 1; }
     100% { transform: translateY(18px); opacity: 0; }
-  };
+  }
   
-  --keyframes-float: {
+  @keyframes float {
     0%, 100% { transform: translateY(0); }
     50% { transform: translateY(-10px); }
-  };
+  }
 
   --animation-scroll-dot: scroll-dot 1.8s ease-in-out infinite;
   --animation-float-slow: float 3s ease-in-out infinite;
@@ -24,18 +27,6 @@
   body {
     background-color: var(--color-main-bg);
     color: white;
+    font-family: var(--font-cairo);
   }
-}
-
-/* باقي الكود كما هو */
-[lang="ar"], [dir="rtl"] {
-  font-family: var(--font-cairo) !important;
-}
-
-@utility animate-scroll-dot {
-  animation: var(--animation-scroll-dot);
-}
-
-@utility animate-float-slow {
-  animation: var(--animation-float-slow);
 }
