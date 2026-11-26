@@ -42,7 +42,7 @@ const Contact = ({ lang }: { lang: "ar" | "en" }) => {
       info: [
         { icon: <Mail size={18} />, label: "Email", value: "moibrahem522@gmail.com", link: "mailto:moibrahem522@gmail.com" },
         { icon: <Phone size={18} />, label: "Phone", value: "+201228989799", link: "tel:+201228989799" },
-        { icon: <MapPin size={18} />, label: "Location", value: "Egypt, Zagazig", link: "#" },
+        { icon: <MapPin size={18} />, label: "Location", value: "Egypt, Zagazig", link: "https://www.google.com/maps/search/?api=1&query=Zagazig,Egypt" },
       ],
       form: { name: "Full Name", phone: "Phone Number", msg: "Message", btn: "Send to WhatsApp" }
     },
@@ -53,7 +53,7 @@ const Contact = ({ lang }: { lang: "ar" | "en" }) => {
       info: [
         { icon: <Mail size={18} />, label: "الإيميل", value: "moibrahem522@gmail.com", link: "mailto:moibrahem522@gmail.com" },
         { icon: <Phone size={18} />, label: "الموبايل", value: "01228989799", link: "tel:+201228989799" },
-        { icon: <MapPin size={18} />, label: "الموقع", value: "مصر، الزقازيق", link: "#" },
+        { icon: <MapPin size={18} />, label: "الموقع", value: "مصر، الزقازيق", link: "https://www.google.com/maps/search/?api=1&query=Zagazig,Egypt" },
       ],
       form: { name: "الاسم بالكامل", phone: "رقم الهاتف", msg: "الرسالة", btn: "إرسال للواتساب" }
     }
