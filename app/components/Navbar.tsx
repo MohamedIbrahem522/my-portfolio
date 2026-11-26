@@ -12,7 +12,6 @@ const roles = [
   { ar: "مطور واجهات أمامية (React)", en: "Front-end (React)" },
   { ar: "مطور خلفية برمجية (Node.js)", en: "Back-end (Node.js)" },
   { ar: "مطور ويب متكامل (Full Stack)", en: "Full Stack Developer" },
-  { ar: "مهندس ذكاء اصطناعي (YOLO)", en: "AI (YOLO)" },
 ];
 
 const Navbar: React.FC<NavbarProps> = ({ lang, setLang, t }) => {
