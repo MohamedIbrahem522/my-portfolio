@@ -1,7 +1,7 @@
 "use client";
 import React, { useState, useRef } from "react";
 import { motion } from "framer-motion";
-import { Github, GraduationCap, Layers, Code2, Film, Rocket, School } from "lucide-react";
+import { Github, GraduationCap, Layers, ShoppingBag, Code2, Film, Rocket, School } from "lucide-react";
 
 const Projects = ({ lang }: { lang: "ar" | "en" }) => {
   const isAr = lang === "ar";
@@ -22,12 +22,13 @@ const Projects = ({ lang }: { lang: "ar" | "en" }) => {
       title: "FEATURED",
       highlight: "WORKS",
       projects: [
-        { title: "Graduation Project (YOLOv8)", category: "Computer Vision", tech: ["Python", "FastAPI", "YOLOv8"], icon: <GraduationCap size={22} />, desc: "Real-time object detection app with Arabic translations for class names. Awarded A+ Grade." },
-        { title: "E-Commerce Platform", category: "Full-Stack Solution", tech: ["Node.js", "Express.js", "MongoDB", "MySQL"], icon: <Layers size={22} />, desc: "Full-featured market with secure authentication, product management, and payment flows." },
-        { title: "PC-Store", category: "User Experience", tech: ["React.js", "HTML", "CSS", "Bootstrap"], icon: <Code2 size={22} />, desc: "Premium computer parts store featuring dynamic browsing and high-performance UI." },
-        { title: "MO Movie Hub", category: "Modern Web App", tech: ["Next.js", "Tailwind CSS", "API"], icon: <Film size={22} />, desc: "Cinematic dashboard with real-time data fetching and optimized user journey." },
-        { title: "Digital Book Store", category: "System Logic", tech: ["HTML", "CSS", "Bootstrap", "Email.js"], icon: <Rocket size={22} />, desc: "Interactive bookstore with purchasing workflows and automated email notifications." },
-        { title: "Eduford Portal", category: "E-Learning Portal", tech: ["HTML", "CSS", "Bootstrap", "JS"], icon: <School size={22} />, desc: "Modern educational platform with responsive design and interactive dynamic content." }
+        { repo: "https://github.com/MohamedIbrahem522/Shop-From-Dubai-Backend", extra: { label: "Frontend repo", href: "https://github.com/MohamedIbrahem522/Shop-From-Dubai-Frontend" }, title: "Shop From Dubai", category: "Freelance Client Project", tech: ["Node.js", "Express.js", "MongoDB", "Cloudinary", "JWT"], icon: <ShoppingBag size={22} />, desc: "Arabic (RTL) e-commerce store built for a client: REST API, JWT admin dashboard, products, categories, reviews and Cloudinary image uploads." },
+        { repo: "https://github.com/MohamedIbrahem522/GradProjectYOLOv8-ArEn", title: "Graduation Project (YOLOv8)", category: "Computer Vision", tech: ["Python", "FastAPI", "YOLOv8"], icon: <GraduationCap size={22} />, desc: "Real-time object detection app with Arabic translations for class names. Awarded A+ Grade." },
+        { repo: "https://github.com/MohamedIbrahem522/BoroBazar-Ecommerce", title: "BoroBazar E-Commerce API", category: "Full-Stack Solution", tech: ["Node.js", "Express.js", "MongoDB"], icon: <Layers size={22} />, desc: "E-commerce backend API built with Node.js, Express and MongoDB (category module)." },
+        { repo: "https://github.com/MohamedIbrahem522/PC-Store", title: "PC-Store", category: "User Experience", tech: ["React.js", "HTML", "CSS", "Bootstrap"], icon: <Code2 size={22} />, desc: "Premium computer parts store featuring dynamic browsing and high-performance UI." },
+        { repo: "https://github.com/MohamedIbrahem522/MoMovie", title: "MO Movie Hub", category: "Modern Web App", tech: ["Next.js", "Tailwind CSS", "API"], icon: <Film size={22} />, desc: "Cinematic dashboard with real-time data fetching and optimized user journey." },
+        { repo: "https://github.com/MohamedIbrahem522/Book-Store", title: "Digital Book Store", category: "System Logic", tech: ["HTML", "CSS", "Bootstrap", "Email.js"], icon: <Rocket size={22} />, desc: "Interactive bookstore with purchasing workflows and automated email notifications." },
+        { repo: "https://github.com/MohamedIbrahem522/Eduford-project", title: "Eduford Portal", category: "E-Learning Portal", tech: ["HTML", "CSS", "Bootstrap", "JS"], icon: <School size={22} />, desc: "Modern educational platform with responsive design and interactive dynamic content." }
       ]
     },
     ar: {
@@ -35,12 +36,13 @@ const Projects = ({ lang }: { lang: "ar" | "en" }) => {
       title: "أبـرز",
       highlight: "الأعـمـال",
       projects: [
-        { title: "مشروع التخرج (YOLOv8)", category: "رؤية حاسوبية", tech: ["Python", "FastAPI", "YOLOv8"], icon: <GraduationCap size={22} />, desc: "تطبيق للكشف عن الأشياء في الوقت الفعلي مع ترجمة عربية، حاصل على تقدير ممتاز +A." },
-        { title: "منصة التجارة الإلكترونية", category: "حلول برمجية متكاملة", tech: ["Node.js", "Express.js", "MongoDB", "MySQL"], icon: <Layers size={22} />, desc: "منصة متكاملة مع مصادقة آمنة، إدارة المنتجات، ومعالجة عمليات الدفع المتقدمة." },
-        { title: "متجر الحاسوب PC-Store", category: "تجربة المستخدم", tech: ["React.js", "HTML", "CSS", "Bootstrap"], icon: <Code2 size={22} />, desc: "سوق أجهزة كمبيوتر متميز يركز على تجربة المستخدم والأداء العالي للواجهات." },
-        { title: "منصة MO Movie", category: "تطبيقات الويب الحديثة", tech: ["Next.js", "Tailwind CSS", "API"], icon: <Film size={22} />, desc: "مجمع بيانات سينمائي يوفر تجربة استكشاف سلسة واحترافية لعشاق الأفلام." },
-        { title: "متجر الكتب الرقمي", category: "أنظمة الأتمتة", tech: ["HTML", "CSS", "Bootstrap", "Email.js"], icon: <Rocket size={22} />, desc: "متجر إلكتروني متكامل يدعم عمليات شراء والمراسلة الفورية مع المستخدمين." },
-        { title: "بوابة Eduford التعليمية", category: "منصات التعليم الذكي", tech: ["HTML", "CSS", "Bootstrap", "JS"], icon: <School size={22} />, desc: "تطبيق ويب متجاوب تم تطويره بمحتوى ديناميكي وميزات تفاعلية متطورة." }
+        { repo: "https://github.com/MohamedIbrahem522/Shop-From-Dubai-Backend", extra: { label: "ريبو الواجهة", href: "https://github.com/MohamedIbrahem522/Shop-From-Dubai-Frontend" }, title: "Shop From Dubai", category: "مشروع لعميل", tech: ["Node.js", "Express.js", "MongoDB", "Cloudinary", "JWT"], icon: <ShoppingBag size={22} />, desc: "متجر إلكتروني عربي (RTL) تم بناؤه لعميل: واجهة REST API، لوحة تحكم بمصادقة JWT، منتجات وتصنيفات وتقييمات ورفع صور عبر Cloudinary." },
+        { repo: "https://github.com/MohamedIbrahem522/GradProjectYOLOv8-ArEn", title: "مشروع التخرج (YOLOv8)", category: "رؤية حاسوبية", tech: ["Python", "FastAPI", "YOLOv8"], icon: <GraduationCap size={22} />, desc: "تطبيق للكشف عن الأشياء في الوقت الفعلي مع ترجمة عربية، حاصل على تقدير ممتاز +A." },
+        { repo: "https://github.com/MohamedIbrahem522/BoroBazar-Ecommerce", title: "BoroBazar (API لمتجر إلكتروني)", category: "حلول برمجية متكاملة", tech: ["Node.js", "Express.js", "MongoDB"], icon: <Layers size={22} />, desc: "واجهة برمجية (API) خلفية لمتجر إلكتروني مبنية بـ Node.js وExpress وMongoDB (وحدة التصنيفات)." },
+        { repo: "https://github.com/MohamedIbrahem522/PC-Store", title: "متجر الحاسوب PC-Store", category: "تجربة المستخدم", tech: ["React.js", "HTML", "CSS", "Bootstrap"], icon: <Code2 size={22} />, desc: "سوق أجهزة كمبيوتر متميز يركز على تجربة المستخدم والأداء العالي للواجهات." },
+        { repo: "https://github.com/MohamedIbrahem522/MoMovie", title: "منصة MO Movie", category: "تطبيقات الويب الحديثة", tech: ["Next.js", "Tailwind CSS", "API"], icon: <Film size={22} />, desc: "مجمع بيانات سينمائي يوفر تجربة استكشاف سلسة واحترافية لعشاق الأفلام." },
+        { repo: "https://github.com/MohamedIbrahem522/Book-Store", title: "متجر الكتب الرقمي", category: "أنظمة الأتمتة", tech: ["HTML", "CSS", "Bootstrap", "Email.js"], icon: <Rocket size={22} />, desc: "متجر إلكتروني متكامل يدعم عمليات شراء والمراسلة الفورية مع المستخدمين." },
+        { repo: "https://github.com/MohamedIbrahem522/Eduford-project", title: "بوابة Eduford التعليمية", category: "منصات التعليم الذكي", tech: ["HTML", "CSS", "Bootstrap", "JS"], icon: <School size={22} />, desc: "تطبيق ويب متجاوب تم تطويره بمحتوى ديناميكي وميزات تفاعلية متطورة." }
       ]
     }
   };
@@ -114,12 +116,15 @@ const Projects = ({ lang }: { lang: "ar" | "en" }) => {
                 </div>
 
                 <div className="pt-6 border-t border-white/10">
-                  <a href="https://github.com/MohamedIbrahem522" target="_blank" rel="noopener noreferrer" className="flex items-center justify-between group/btn w-full px-2">
+                  <a href={project.repo} target="_blank" rel="noopener noreferrer" className="flex items-center justify-between group/btn w-full px-2">
                     <span className="text-[11px] font-black text-gray-500 md:group-hover/btn:text-cyan-400 transition-colors tracking-widest uppercase">View Project</span>
                     <div className="w-10 h-10 rounded-full bg-cyan-500/10 border border-cyan-500/20 flex items-center justify-center text-cyan-400 md:group-hover/btn:bg-cyan-500 md:group-hover/btn:text-black transition-all duration-500 md:group-hover/btn:rotate-[360deg]">
                       <Github size={18} />
                     </div>
                   </a>
+                  {"extra" in project && project.extra && (
+                    <a href={project.extra.href} target="_blank" rel="noopener noreferrer" className="block mt-3 px-2 text-[11px] font-black text-cyan-400/80 hover:text-cyan-300 tracking-widest uppercase">{project.extra.label} ↗</a>
+                  )}
                 </div>
               </div>
             </motion.div>
