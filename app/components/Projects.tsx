@@ -1,7 +1,7 @@
 "use client";
 import React, { useState, useRef } from "react";
 import { motion } from "framer-motion";
-import { Github, GraduationCap, Layers, ShoppingBag, Code2, Film, Rocket, School } from "lucide-react";
+import { Github, GraduationCap, Layers, ShoppingBag, Code2, Film, Rocket, School, ExternalLink } from "lucide-react";
 
 const Projects = ({ lang }: { lang: "ar" | "en" }) => {
   const isAr = lang === "ar";
@@ -22,7 +22,7 @@ const Projects = ({ lang }: { lang: "ar" | "en" }) => {
       title: "FEATURED",
       highlight: "WORKS",
       projects: [
-        { repo: "https://github.com/MohamedIbrahem522/Shop-From-Dubai-Backend", extra: { label: "Frontend repo", href: "https://github.com/MohamedIbrahem522/Shop-From-Dubai-Frontend" }, title: "Shop From Dubai", category: "Freelance Client Project", tech: ["Node.js", "Express.js", "MongoDB", "Cloudinary", "JWT"], icon: <ShoppingBag size={22} />, desc: "Arabic (RTL) e-commerce store built for a client: REST API, JWT admin dashboard, products, categories, reviews and Cloudinary image uploads." },
+        { repo: "https://github.com/MohamedIbrahem522/Shop-From-Dubai-Backend", extra: { label: "Frontend repo", href: "https://github.com/MohamedIbrahem522/Shop-From-Dubai-Frontend" }, live: "https://shop-from-dubai-frontend.pages.dev/", title: "Shop From Dubai", category: "Freelance Client Project", tech: ["Node.js", "Express.js", "MongoDB", "Cloudinary", "JWT"], icon: <ShoppingBag size={22} />, desc: "Arabic (RTL) e-commerce store built for a client: REST API, JWT admin dashboard, products, categories, reviews and Cloudinary image uploads." },
         { repo: "https://github.com/MohamedIbrahem522/GradProjectYOLOv8-ArEn", title: "Graduation Project (YOLOv8)", category: "Computer Vision", tech: ["Python", "FastAPI", "YOLOv8"], icon: <GraduationCap size={22} />, desc: "Real-time object detection app with Arabic translations for class names. Awarded A+ Grade." },
         { repo: "https://github.com/MohamedIbrahem522/BoroBazar-Ecommerce", title: "BoroBazar E-Commerce API", category: "Full-Stack Solution", tech: ["Node.js", "Express.js", "MongoDB"], icon: <Layers size={22} />, desc: "E-commerce backend API built with Node.js, Express and MongoDB (category module)." },
         { repo: "https://github.com/MohamedIbrahem522/PC-Store", title: "PC-Store", category: "User Experience", tech: ["React.js", "HTML", "CSS", "Bootstrap"], icon: <Code2 size={22} />, desc: "Premium computer parts store featuring dynamic browsing and high-performance UI." },
@@ -36,7 +36,7 @@ const Projects = ({ lang }: { lang: "ar" | "en" }) => {
       title: "أبـرز",
       highlight: "الأعـمـال",
       projects: [
-        { repo: "https://github.com/MohamedIbrahem522/Shop-From-Dubai-Backend", extra: { label: "ريبو الواجهة", href: "https://github.com/MohamedIbrahem522/Shop-From-Dubai-Frontend" }, title: "Shop From Dubai", category: "مشروع لعميل", tech: ["Node.js", "Express.js", "MongoDB", "Cloudinary", "JWT"], icon: <ShoppingBag size={22} />, desc: "متجر إلكتروني عربي (RTL) تم بناؤه لعميل: واجهة REST API، لوحة تحكم بمصادقة JWT، منتجات وتصنيفات وتقييمات ورفع صور عبر Cloudinary." },
+        { repo: "https://github.com/MohamedIbrahem522/Shop-From-Dubai-Backend", extra: { label: "ريبو الواجهة", href: "https://github.com/MohamedIbrahem522/Shop-From-Dubai-Frontend" }, live: "https://shop-from-dubai-frontend.pages.dev/", title: "Shop From Dubai", category: "مشروع لعميل", tech: ["Node.js", "Express.js", "MongoDB", "Cloudinary", "JWT"], icon: <ShoppingBag size={22} />, desc: "متجر إلكتروني عربي (RTL) تم بناؤه لعميل: واجهة REST API، لوحة تحكم بمصادقة JWT، منتجات وتصنيفات وتقييمات ورفع صور عبر Cloudinary." },
         { repo: "https://github.com/MohamedIbrahem522/GradProjectYOLOv8-ArEn", title: "مشروع التخرج (YOLOv8)", category: "رؤية حاسوبية", tech: ["Python", "FastAPI", "YOLOv8"], icon: <GraduationCap size={22} />, desc: "تطبيق للكشف عن الأشياء في الوقت الفعلي مع ترجمة عربية، حاصل على تقدير ممتاز +A." },
         { repo: "https://github.com/MohamedIbrahem522/BoroBazar-Ecommerce", title: "BoroBazar (API لمتجر إلكتروني)", category: "حلول برمجية متكاملة", tech: ["Node.js", "Express.js", "MongoDB"], icon: <Layers size={22} />, desc: "واجهة برمجية (API) خلفية لمتجر إلكتروني مبنية بالتقنيات التالية: Node.js، Express، MongoDB (وحدة التصنيفات)." },
         { repo: "https://github.com/MohamedIbrahem522/PC-Store", title: "متجر الحاسوب PC-Store", category: "تجربة المستخدم", tech: ["React.js", "HTML", "CSS", "Bootstrap"], icon: <Code2 size={22} />, desc: "سوق أجهزة كمبيوتر متميز يركز على تجربة المستخدم والأداء العالي للواجهات." },
@@ -116,6 +116,14 @@ const Projects = ({ lang }: { lang: "ar" | "en" }) => {
                 </div>
 
                 <div className="pt-6 border-t border-white/10">
+                  {"live" in project && project.live && (
+                    <a href={project.live} target="_blank" rel="noopener noreferrer" className="flex items-center justify-between group/live w-full px-2 mb-3">
+                      <span className="text-[11px] font-black text-cyan-400 md:group-hover/live:text-cyan-300 transition-colors tracking-widest uppercase">{isAr ? "زيارة الموقع الحي" : "Live Site"}</span>
+                      <div className="w-10 h-10 rounded-full bg-cyan-500 border border-cyan-400 flex items-center justify-center text-black transition-all duration-500 md:group-hover/live:scale-110">
+                        <ExternalLink size={18} />
+                      </div>
+                    </a>
+                  )}
                   <a href={project.repo} target="_blank" rel="noopener noreferrer" className="flex items-center justify-between group/btn w-full px-2">
                     <span className="text-[11px] font-black text-gray-500 md:group-hover/btn:text-cyan-400 transition-colors tracking-widest uppercase">View Project</span>
                     <div className="w-10 h-10 rounded-full bg-cyan-500/10 border border-cyan-500/20 flex items-center justify-center text-cyan-400 md:group-hover/btn:bg-cyan-500 md:group-hover/btn:text-black transition-all duration-500 md:group-hover/btn:rotate-[360deg]">
